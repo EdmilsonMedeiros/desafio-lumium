@@ -132,9 +132,9 @@ class LogDNSService
         ->get();
         
         $totalLogs              = LogDNS::where('user_id', auth()->user()->id)->count();
-        $percentualSeguro       = ($logDNSStatistics->where('classification', 'Seguro')->count() / $totalLogs) * 100;
-        $percentualMalicioso    = ($logDNSStatistics->where('classification', 'Malicioso')->count() / $totalLogs) * 100;
-        $percentualSuspeito     = ($logDNSStatistics->where('classification', 'Suspeito')->count() / $totalLogs) * 100;
+        $percentualSeguro       = ($logDNSStatistics->where('classification', 'Seguro')->sum('total') / $totalLogs) * 100;
+        $percentualMalicioso    = ($logDNSStatistics->where('classification', 'Malicioso')->sum('total') / $totalLogs) * 100;
+        $percentualSuspeito     = ($logDNSStatistics->where('classification', 'Suspeito')->sum('total') / $totalLogs) * 100;
         $last10Maliciosos       = LogDNS::where('user_id', auth()->user()->id)->where('classification', 'Malicioso')->limit(10)->get();
         $totalMaliciosos        = LogDNS::where('user_id', auth()->user()->id)->where('classification', 'Malicioso')->count();
 

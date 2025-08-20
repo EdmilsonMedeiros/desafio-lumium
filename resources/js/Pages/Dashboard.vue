@@ -32,7 +32,7 @@ onMounted(() => {
 const getLogDNSStatistics = () => {
     axios.get('/log-dns/statistics').then(response => {
         logDNSStatistics.value = response.data;
-        console.log(logDNSStatistics.value);
+        // console.log('logDNSStatistics', logDNSStatistics.value);
     });
 }
 
