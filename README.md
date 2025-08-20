@@ -55,8 +55,8 @@
 
 ### 1. Clonar repositório
 ```bash
-git clone https://github.com/seu-usuario/dns-log-analyzer.git
-cd dns-log-analyzer
+git clone https://github.com/EdmilsonMedeiros/desafio-lumium.git
+cd desafio-lumium
 ```
 
 ### 2. Instalar dependências
